@@ -3,6 +3,8 @@ import axios from "axios";
 import md5 from "md5";
 import { CharactersItem } from "./CharactersItem";
 
+import "../styles/charactersList.scss"
+
 
 const baseUrl = 'http://gateway.marvel.com/v1/public/characters?';
 const time = Number(new Date());
@@ -30,7 +32,7 @@ export function CharactersList() {
 
   return (
     <section className="characters-list">
-        <h1>Lista de Personagens</h1>
+        <h1>Characters List</h1>
 
         <ul>
             {characters.map(character => {
