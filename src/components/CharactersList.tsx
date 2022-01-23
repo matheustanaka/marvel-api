@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import { useEffect, useState } from "react";
 import axios from "axios";
 import md5 from "md5";
