@@ -12,6 +12,8 @@ Learn more about:
 
 ## Getting Started
 
+You should check https://matheustanaka-marvel-api.netlify.app/ or follow the steps bellow:
+
         # clone repo
         $ git clone https://github.com/matheustanaka/marvel-api.git
         
