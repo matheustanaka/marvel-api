@@ -9,7 +9,7 @@ import "../styles/charactersList.scss"
 
 const baseUrl = 'http://gateway.marvel.com/v1/public/characters?';
 const time = Number(new Date());
-const hash = md5(time + `${process.env.REACT_APP_PRIVATEKEY}` + `${process.env.REACT_APP_PUBLICKEY}`);
+const hash = md5(time + `${process.env.REACT_APP_PRIVATEKEY}`+`${process.env.REACT_APP_PUBLICKEY}`);
 
 interface Character {
   id: number;
