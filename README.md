@@ -1,6 +1,6 @@
 <h1 align="center"> Marvel API</h1>
 
-Consuming Marvel API with Axios. Check the link matheustanaka-marvel-api.netlify.app/
+Consuming Marvel API with Axios. Check the link https://matheustanaka-marvel-api.netlify.app/
 
 ## Objective
 
