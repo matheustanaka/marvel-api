@@ -2,19 +2,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import md5 from "md5";
 
-interface Character {
+import { Character } from "./Character";
+import "../styles/character.scss"
+interface ICharacter {
     id: number;
     name: string;
     description: string;
     thumbnail: {
-        path: string,
-        extension: string
+        path: string;
+        extension: string;
     };
 }
 
 export const SearchCharacter = () => {
     const [characterName, setCharacterName] = useState("");
-    const [characters, setCharacters] = useState<Character[]>([]);
+    const [characters, setCharacters] = useState<ICharacter[]>([]);
 
     useEffect(() => {
         requestCharacters();
@@ -31,16 +33,23 @@ export const SearchCharacter = () => {
     }
     return (
         <div className="search-character">
+            <header>
+                <h1><span>Hero</span>Finder</h1>
+            </header>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 requestCharacters();
             }}>
                 <label htmlFor="character-name">
-                    Name
                     <input id="name" value={characterName} placeholder="Type Character's Name" onChange={(e) => setCharacterName(e.target.value)} />
                 </label>
                 <button>Search</button>
             </form>
+            <article>
+                {characters.map((character) => {
+                    return <Character character={character} key={character.id} />
+                })}
+            </article>
         </div>
     )
 }
