@@ -5,6 +5,7 @@
   padding: 6rem;
   margin: 0 auto;
 
+
   header {
     h1 {
       span {
@@ -51,8 +52,39 @@
     }
   }
 
-  article {
+  section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 4rem;
+
+    .container-result {
+      margin-top: 3rem;
+
+      img {
+        border-radius: 0.5rem;
+      }
+
+      text-align: center;
+
+      button {
+        background-color: #FF0000;
+        border: 0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+
+        a {
+          text-decoration: none;
+          color: #FFFFFF;
+          font-size: 1rem;
+        }
+
+        transition: background-color 200ms;
+      }
+
+      button:hover {
+        background-color: #dc3737;
+      }
+    }
   }
 }
