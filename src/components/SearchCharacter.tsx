@@ -30,6 +30,7 @@ export const SearchCharacter = () => {
     const requestCharacters = async () => {
         const baseUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${characterName}`;
         const time = Number(new Date());
+        // eslint-disable-next-line no-useless-concat
         const hash = md5(time + `${process.env.REACT_APP_PRIVATEKEY}` + `${process.env.REACT_APP_PUBLICKEY}`);
 
         const { data } = await axios.get(`${baseUrl}&ts=${time}&apikey=${process.env.REACT_APP_PUBLICKEY}&hash=${hash}`);
