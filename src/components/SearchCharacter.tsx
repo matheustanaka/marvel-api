@@ -11,7 +11,12 @@ interface ICharacter {
     thumbnail: {
         path: string;
         extension: string;
-    };
+    }
+    urls: {
+        [index: string]: {
+            url: string;
+        }
+    }
 }
 
 export const SearchCharacter = () => {
@@ -28,7 +33,6 @@ export const SearchCharacter = () => {
         const hash = md5(time + `${process.env.REACT_APP_PRIVATEKEY}` + `${process.env.REACT_APP_PUBLICKEY}`);
 
         const { data } = await axios.get(`${baseUrl}&ts=${time}&apikey=${process.env.REACT_APP_PUBLICKEY}&hash=${hash}`);
-        console.log(data);
         setCharacters(data.data.results);
     }
     return (
@@ -45,11 +49,11 @@ export const SearchCharacter = () => {
                 </label>
                 <button>Search</button>
             </form>
-            <article>
+            <section>
                 {characters.map((character) => {
                     return <Character character={character} key={character.id} />
                 })}
-            </article>
+            </section>
         </div>
     )
 }
